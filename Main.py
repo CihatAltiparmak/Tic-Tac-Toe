@@ -80,123 +80,43 @@ class MainWindow(QMainWindow, ui.Ui_MainWindow):
             target.textChanged.connect(self.opponnent)
             target.textChanged.connect(self.winning_reactions)
             
-# "Coordination" is meaning locations of the marks that appearing in the board.
-        self.coordination = lambda: [[i.text() for i in self.blocks[0]], [i.text() for i in self.blocks[1]], [i.text() for i in self.blocks[2]]] 
+        self.position = lambda: [[i.text() for i in self.blocks[0]], [i.text() for i in self.blocks[1]], [i.text() for i in self.blocks[2]]] 
     
     def winning_reactions(self):
         # Horizontal Win
-        if self.coordination()[0] == ['O', 'O', 'O']:
+        if self.position()[0] == ['O', 'O', 'O']:
             print('O HAS WON AS HORIZONTAL')
             
-        elif self.coordination()[1] == ['O', 'O', 'O']:
+        elif self.position()[1] == ['O', 'O', 'O']:
             print('O HAS WON AS HORIZONTAL')
             
-        elif self.coordination()[2] == ['O', 'O', 'O']:
+        elif self.position()[2] == ['O', 'O', 'O']:
             print('O HAS WON AS HORIZONTAL')
             
         # Vertical Win
-        elif self.coordination()[0][0] == 'O' and self.coordination()[1][0] == 'O' and self.coordination()[2][0] == 'O':
+        elif self.position()[0][0] == 'O' and self.position()[1][0] == 'O' and self.position()[2][0] == 'O':
             print('O HAS WON AS VERTICAL')
             
-        elif self.coordination()[0][1] == 'O' and self.coordination()[1][1] == 'O' and self.coordination()[2][1] == 'O':
+        elif self.position()[0][1] == 'O' and self.position()[1][1] == 'O' and self.position()[2][1] == 'O':
             print('O HAS WON AS VERTICAL')
             
-        elif self.coordination()[0][2] == 'O' and self.coordination()[1][2] == 'O' and self.coordination()[2][2] == 'O':
+        elif self.position()[0][2] == 'O' and self.position()[1][2] == 'O' and self.position()[2][2] == 'O':
             print('O HAS WON AS VERTICAL')
         # Cross Win
-        elif self.coordination()[0][0] == 'O' and self.coordination()[1][1] == 'O' and self.coordination()[2][2] == 'O':
+        elif self.position()[0][0] == 'O' and self.position()[1][1] == 'O' and self.position()[2][2] == 'O':
             print('O HAS WON AS CROSS')
         
-        elif self.coordination()[0][2] == 'O' and self.coordination()[1][1] == 'O' and self.coordination()[2][0] == 'O':
+        elif self.position()[0][2] == 'O' and self.position()[1][1] == 'O' and self.position()[2][0] == 'O':
             print('O HAS WON AS CROSS')
         # Draw 
-        elif all(self.coordination()[0]) and all(self.coordination()[1]) and all(self.coordination()[2]):
+        elif all(self.position()[0]) and all(self.position()[1]) and all(self.position()[2]):
             print('DRAW')
     
     def opponnent(self):
-        print(self.coordination()[0], self.coordination()[1], self.coordination()[2], sep="\n", end=f"\n {10*'-'} \n")
-        print(self.coordination())
+        print(self.position()[0], self.position()[1], self.position()[2], sep="\n", end=f"\n {10*'-'} \n")
+        print(self.position())
         
-        if self.coordination() != [['', '', ''], ['', 'X', ''], ['', '', '']]:
-            self.blocks[1][1].setText('O')
-        
-        if self.coordination() == [['X', 'X', ''], ['', 'O', ''], ['', '', '']]:
-            self.blocks[0][2].setText('O')
-            
-        if self.coordination() == [['X', 'X', 'O'], ['X', 'O', ''], ['', '', '']] or self.coordination() == [['X', 'X', 'O'], ['', 'O', 'X'], ['', '', '']] or self.coordination() == [['X', 'X', 'O'], ['', 'O', ''], ['', 'X', '']] or self.coordination() == [['X', 'X', 'O'], ['', 'O', ''], ['', '', 'X']]:
-            self.blocks[2][0].setText('O')
-            
-        if self.coordination() == [['X', 'X', 'O'], ['', 'O', ''], ['X', '', '']]:
-            self.blocks[1][0].setText('O')
-            
-        if self.coordination() == [['X', 'X', 'O'], ['O', 'O', ''], ['X', 'X', '']] or self.coordination() == [['X', 'X', 'O'], ['O', 'O', ''], ['X', '', 'X']]:
-            self.blocks[1][2].setText('O')
-            
-        if self.coordination() == [['X', 'X', 'O'], ['O', 'O', 'X'], ['X', '', '']]:
-            random.choice([self.blocks[2][1], self.blocks[2][2]]).setText('O')
-        # Varyant Bitti
-        
-        if self.coordination() == [['X', '', 'X'], ['', 'O', ''], ['', '', '']]:
-            self.blocks[0][1].setText('O')
-        
-        if self.coordination() == [['X', 'O', 'X'], ['X', 'O', ''], ['', '', '']] or self.coordination() == [['X', 'O', 'X'], ['', 'O', 'X'], ['', '', '']] or self.coordination() == [['X', 'O', 'X'], ['', 'O', ''], ['X', '', '']] or self.coordination() == [['X', 'O', 'X'], ['', 'O', ''], ['', '', 'X']]:
-            self.blocks[2][1].setText('O')
-            
-        if self.coordination() == [['X', 'O', 'X'], ['', 'O', ''], ['', 'X', '']]:
-            random.choice([self.blocks[1][0], self.blocks[1][2], self.blocks[2][0], self.blocks[2][2]]).setText('O')
-            
-        if self.coordination() == [['X', 'O', 'X'], ['X', 'O', 'O'], ['', 'X', '']]:
-            self.blocks[2][0].setText('O')
-            
-        if self.coordination() == [['X', 'O', 'X'], ['O', 'O', 'X'], ['', 'X', '']]:
-            self.blocks[2][2].setText('O')
-            
-        if self.coordination() == [['X', 'O', 'X'], ['X', 'O', ''], ['O', 'X', '']]:
-            random.choice([self.blocks[1][2], self.blocks[2][2]]).setText('O')
-            
-        if self.coordination() == [['X', 'O', 'X'], ['', 'O', 'X'], ['O', 'X', '']]:
-            self.blocks[2][2].setText('O')
-            
-        if self.coordination() == [['X', 'O', 'X'], ['', 'O', ''], ['O', 'X', 'X']]:
-            self.blocks[1][2].setText('O')
-            
-        if self.coordination() == [['X', 'O', 'X'], ['X', 'O', ''], ['', 'X', 'O']]:
-            self.blocks[2][0].setText('O')
-            
-        if self.coordination() == [['X', 'O', 'X'], ['', 'O', 'X'], ['', 'X', 'O']]:
-            random.choice([self.blocks[1][0], self.blocks[2][0]]).setText('O')
-        
-        if self.coordination() == [['X', 'O', 'X'], ['', 'O', ''], ['X', 'X', 'O']]:
-            self.blocks[1][0].setText('O')
-        
-        if self.coordination() == [['X', 'O', 'X'], ['', 'O', 'O'], ['X', 'X', '']]:
-            self.blocks[1][0].setText('O')
-            
-        if self.coordination() == [['X', 'O', 'X'], ['', 'O', 'O'], ['', 'X', 'X']]:
-            self.blocks[1][0].setText('O')
-            
-        if self.coordination() == [['X', 'O', 'X'], ['O', 'O', ''], ['X', 'X', '']]:
-            self.blocks[1][2].setText('O')
-            
-        if self.coordination() == [['X', 'O', 'X'], ['O', 'O', ''], ['', 'X', 'X']]:
-            self.blocks[1][2].setText('O')
-            
-        # varyant bitti ([0][1])
-        if self.coordination() == [['X', '', ''], ['X', 'O', ''], ['', '', '']]:
-            self.blocks[2][0].setText('O')
-            
-        if self.coordination() == [['X', 'X', ''], ['X', 'O', ''], ['O', '', '']] or self.coordination() == [['X', '', ''], ['X', 'O', 'X'], ['O', '', '']] or self.coordination() == [['X', '', ''], ['X', 'O', ''], ['O', 'X', '']] or self.coordination() == [['X', '', ''], ['X', 'O', ''], ['O', '', 'X']]:
-            self.blocks[0][2].setText('O')
-    
-        if self.coordination() == [['X', '', 'X'], ['X', 'O', ''], ['O', '', '']]:
-            self.blocks[0][1].setText('O')
-            
-        if self.coordination() == [['X', 'O', 'X'], ['X', 'O', ''], ['O', '', '']]:
-            self.blocks[2][1].setText('O')
-        
-        if self.coordination() == [['X', 'O', 'X'], ['X', 'O', ''], ['O', 'X', '']]:
-            random.choice([self.blocks[1][2], self.blocks[2][2]]).setText('O')
-        
+
 if __name__ == "__main__":
     app = QApplication(sys.argv)
     splashScreen = MainWindow()
