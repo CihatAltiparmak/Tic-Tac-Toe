@@ -182,8 +182,21 @@ class MainWindow(QMainWindow, ui.Ui_MainWindow):
             self.blocks[1][2].setText('O')
             
         # varyant bitti ([0][1])
-        
+        if self.coordination() == [['X', '', ''], ['X', 'O', ''], ['', '', '']]:
+            self.blocks[2][0].setText('O')
+            
+        if self.coordination() == [['X', 'X', ''], ['X', 'O', ''], ['O', '', '']] or self.coordination() == [['X', '', ''], ['X', 'O', 'X'], ['O', '', '']] or self.coordination() == [['X', '', ''], ['X', 'O', ''], ['O', 'X', '']] or self.coordination() == [['X', '', ''], ['X', 'O', ''], ['O', '', 'X']]:
+            self.blocks[0][2].setText('O')
     
+        if self.coordination() == [['X', '', 'X'], ['X', 'O', ''], ['O', '', '']]:
+            self.blocks[0][1].setText('O')
+            
+        if self.coordination() == [['X', 'O', 'X'], ['X', 'O', ''], ['O', '', '']]:
+            self.blocks[2][1].setText('O')
+        
+        if self.coordination() == [['X', 'O', 'X'], ['X', 'O', ''], ['O', 'X', '']]:
+            random.choice([self.blocks[1][2], self.blocks[2][2]]).setText('O')
+        
 if __name__ == "__main__":
     app = QApplication(sys.argv)
     splashScreen = MainWindow()
