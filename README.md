@@ -1,6 +1,6 @@
 # Tic-Tac-Toe
 
-An Easy Game That Can Be Played Against Computer
+## An Easy Game That Can Be Played Against Computer
 
 Screenshot
 
