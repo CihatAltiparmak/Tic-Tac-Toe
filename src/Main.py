@@ -1,6 +1,6 @@
 from PyQt5.QtGui import QIcon
 from PyQt5.QtWidgets import QApplication, QWidget, \
-                            QMainWindow, QDialog, qApp
+                            QMainWindow, QDialog
 from PyQt5.QtCore import QTimer, Qt
 import sys
 import random
