@@ -4,7 +4,6 @@ from PyQt5.QtWidgets import QApplication, QWidget, \
 from PyQt5.QtCore import QTimer, Qt
 import sys
 import random
-from functools import partial
 
 # binding
 from ui import tic_tac_toe_ui, game_result_dialog 
