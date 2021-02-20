@@ -1,9 +1,8 @@
 from PyQt5.QtGui import QIcon
 from PyQt5.QtWidgets import QApplication, QWidget, \
                             QMainWindow, QDialog
-from PyQt5.QtCore import QTimer, Qt
-import sys
-import random
+from PyQt5.QtCore import Qt
+
 from math import inf
 
 # binding
@@ -117,7 +116,6 @@ class MainWindow(QMainWindow):
     
     
         
-
 if __name__ == "__main__":
     app = QApplication(sys.argv)
     splashScreen = MainWindow()
