@@ -8,7 +8,7 @@ You can play tictactoe game against computer. (Owing to the fact that you are ne
 * improvements for two players to be able to play against each other from different computers 
 * chat system for two players to type to each other in match if above is done
 * interface improvements
-* any inovative idea 
+* any innovative idea 
 
 Enjoy it.
 
