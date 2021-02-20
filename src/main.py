@@ -14,10 +14,11 @@ import tic_tac_toe_ai as ai
 class MainWindow(QMainWindow):
     def __init__(self):
         super().__init__()
+        
         self.player = 'X'
         self.computer = 'O'
         self.move_count = 9
-        self.game_over = False
+        
         self.scores = {
                         self.computer : 0,
                         self.player : 0
