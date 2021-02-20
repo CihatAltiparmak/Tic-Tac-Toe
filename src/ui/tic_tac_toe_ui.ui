@@ -9,8 +9,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1150</width>
-    <height>731</height>
+    <width>608</width>
+    <height>796</height>
    </rect>
   </property>
   <property name="sizePolicy">
@@ -21,8 +21,14 @@
   </property>
   <property name="minimumSize">
    <size>
-    <width>1150</width>
-    <height>731</height>
+    <width>608</width>
+    <height>796</height>
+   </size>
+  </property>
+  <property name="maximumSize">
+   <size>
+    <width>608</width>
+    <height>796</height>
    </size>
   </property>
   <property name="windowTitle">
@@ -41,13 +47,14 @@
      <verstretch>0</verstretch>
     </sizepolicy>
    </property>
-   <layout class="QHBoxLayout" name="horizontalLayout_2" stretch="1,2,1">
+   <layout class="QVBoxLayout" name="verticalLayout" stretch="2,9">
     <item>
-     <layout class="QVBoxLayout" name="verticalLayout_6">
+     <layout class="QHBoxLayout" name="horizontalLayout_2">
       <item>
-       <widget class="QFrame" name="frame_2">
+       <widget class="QFrame" name="frame">
         <property name="styleSheet">
-         <string notr="true">background-color: rgb(85, 255, 0);</string>
+         <string notr="true">background-color: rgb(255, 255, 127);
+background-color: rgb(255, 255, 255);</string>
         </property>
         <property name="frameShape">
          <enum>QFrame::StyledPanel</enum>
@@ -55,33 +62,32 @@
         <property name="frameShadow">
          <enum>QFrame::Raised</enum>
         </property>
-        <layout class="QVBoxLayout" name="verticalLayout_8" stretch="1,4">
+        <layout class="QHBoxLayout" name="horizontalLayout_3" stretch="0,0">
+         <property name="bottomMargin">
+          <number>9</number>
+         </property>
          <item>
           <widget class="QLabel" name="player1_label">
            <property name="styleSheet">
             <string notr="true">font: 20pt &quot;MS Shell Dlg 2&quot;;
-border: 3px solid red; 
-
-</string>
+border: 3px solid black;</string>
            </property>
            <property name="text">
-            <string>Player 1</string>
-           </property>
-           <property name="alignment">
-            <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+            <string>You: 0</string>
            </property>
           </widget>
          </item>
          <item>
-          <widget class="QLabel" name="label_11">
-           <property name="enabled">
-            <bool>true</bool>
+          <widget class="QLabel" name="player2_label">
+           <property name="styleSheet">
+            <string notr="true">font: 20pt &quot;MS Shell Dlg 2&quot;;
+border: 3px solid black; </string>
            </property>
            <property name="text">
-            <string/>
+            <string>Computer: 0</string>
            </property>
            <property name="alignment">
-            <set>Qt::AlignHCenter|Qt::AlignTop</set>
+            <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
            </property>
           </widget>
          </item>
@@ -104,7 +110,7 @@ border: 3px solid red;
             <property name="styleSheet">
              <string notr="true">background-color: rgb(65, 65, 65);
 font: 65pt &quot;MS Shell Dlg 2&quot;;
-border: 3px solid red; 
+border: 3px solid white; 
 border-radius: 70px;
 color: rgb(170, 255, 255);</string>
             </property>
@@ -121,7 +127,7 @@ color: rgb(170, 255, 255);</string>
             <property name="styleSheet">
              <string notr="true">background-color: rgb(65, 65, 65);
 font: 65pt &quot;MS Shell Dlg 2&quot;;
-border: 3px solid red; 
+border: 3px solid white; 
 border-radius: 70px;
 color: rgb(170, 255, 255);</string>
             </property>
@@ -138,7 +144,7 @@ color: rgb(170, 255, 255);</string>
             <property name="styleSheet">
              <string notr="true">background-color: rgb(65, 65, 65);
 font: 65pt &quot;MS Shell Dlg 2&quot;;
-border: 3px solid red; 
+border: 3px solid white; 
 border-radius: 70px;
 color: rgb(170, 255, 255);</string>
             </property>
@@ -159,7 +165,7 @@ color: rgb(170, 255, 255);</string>
             <property name="styleSheet">
              <string notr="true">background-color: rgb(65, 65, 65);
 font: 65pt &quot;MS Shell Dlg 2&quot;;
-border: 3px solid red; 
+border: 3px solid white; 
 border-radius: 70px;
 color: rgb(170, 255, 255);</string>
             </property>
@@ -176,7 +182,7 @@ color: rgb(170, 255, 255);</string>
             <property name="styleSheet">
              <string notr="true">background-color: rgb(65, 65, 65);
 font: 65pt &quot;MS Shell Dlg 2&quot;;
-border: 3px solid red; 
+border: 3px solid white; 
 border-radius: 70px;
 color: rgb(170, 255, 255);</string>
             </property>
@@ -193,7 +199,7 @@ color: rgb(170, 255, 255);</string>
             <property name="styleSheet">
              <string notr="true">background-color: rgb(65, 65, 65);
 font: 65pt &quot;MS Shell Dlg 2&quot;;
-border: 3px solid red; 
+border: 3px solid white; 
 border-radius: 70px;
 color: rgb(170, 255, 255);</string>
             </property>
@@ -220,7 +226,7 @@ color: rgb(170, 255, 255);</string>
             <property name="styleSheet">
              <string notr="true">background-color: rgb(65, 65, 65);
 font: 65pt &quot;MS Shell Dlg 2&quot;;
-border: 3px solid red; 
+border: 3px solid white; 
 border-radius: 70px;
 color: rgb(170, 255, 255);</string>
             </property>
@@ -237,7 +243,7 @@ color: rgb(170, 255, 255);</string>
             <property name="styleSheet">
              <string notr="true">background-color: rgb(65, 65, 65);
 font: 65pt &quot;MS Shell Dlg 2&quot;;
-border: 3px solid red; 
+border: 3px solid white; 
 border-radius: 70px;
 color: rgb(170, 255, 255);</string>
             </property>
@@ -254,7 +260,7 @@ color: rgb(170, 255, 255);</string>
             <property name="styleSheet">
              <string notr="true">background-color: rgb(65, 65, 65);
 font: 65pt &quot;MS Shell Dlg 2&quot;;
-border: 3px solid red; 
+border: 3px solid white; 
 border-radius: 70px;
 color: rgb(170, 255, 255);</string>
             </property>
@@ -272,52 +278,6 @@ color: rgb(170, 255, 255);</string>
       </item>
      </layout>
     </item>
-    <item>
-     <layout class="QVBoxLayout" name="verticalLayout_7">
-      <item>
-       <widget class="QFrame" name="frame">
-        <property name="styleSheet">
-         <string notr="true">background-color: rgb(255, 255, 127);</string>
-        </property>
-        <property name="frameShape">
-         <enum>QFrame::StyledPanel</enum>
-        </property>
-        <property name="frameShadow">
-         <enum>QFrame::Raised</enum>
-        </property>
-        <layout class="QVBoxLayout" name="verticalLayout_9" stretch="1,4">
-         <property name="bottomMargin">
-          <number>9</number>
-         </property>
-         <item>
-          <widget class="QLabel" name="player2_label">
-           <property name="styleSheet">
-            <string notr="true">font: 20pt &quot;MS Shell Dlg 2&quot;;
-border: 3px solid red; </string>
-           </property>
-           <property name="text">
-            <string>Player 2</string>
-           </property>
-           <property name="alignment">
-            <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
-           </property>
-          </widget>
-         </item>
-         <item>
-          <widget class="QLabel" name="label_10">
-           <property name="text">
-            <string/>
-           </property>
-           <property name="alignment">
-            <set>Qt::AlignHCenter|Qt::AlignTop</set>
-           </property>
-          </widget>
-         </item>
-        </layout>
-       </widget>
-      </item>
-     </layout>
-    </item>
    </layout>
   </widget>
   <widget class="QMenuBar" name="menubar">
@@ -325,7 +285,7 @@ border: 3px solid red; </string>
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>1150</width>
+     <width>608</width>
      <height>21</height>
     </rect>
    </property>

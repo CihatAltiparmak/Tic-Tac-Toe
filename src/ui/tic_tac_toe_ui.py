@@ -15,13 +15,14 @@ class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
         MainWindow.setEnabled(True)
-        MainWindow.resize(1150, 731)
+        MainWindow.resize(608, 796)
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.Preferred)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
         sizePolicy.setHeightForWidth(MainWindow.sizePolicy().hasHeightForWidth())
         MainWindow.setSizePolicy(sizePolicy)
-        MainWindow.setMinimumSize(QtCore.QSize(1150, 731))
+        MainWindow.setMinimumSize(QtCore.QSize(608, 796))
+        MainWindow.setMaximumSize(QtCore.QSize(608, 796))
         MainWindow.setAutoFillBackground(False)
         MainWindow.setStyleSheet("background-color: rgb(0, 0, 0);")
         self.centralwidget = QtWidgets.QWidget(MainWindow)
@@ -31,35 +32,32 @@ class Ui_MainWindow(object):
         sizePolicy.setHeightForWidth(self.centralwidget.sizePolicy().hasHeightForWidth())
         self.centralwidget.setSizePolicy(sizePolicy)
         self.centralwidget.setObjectName("centralwidget")
-        self.horizontalLayout_2 = QtWidgets.QHBoxLayout(self.centralwidget)
+        self.verticalLayout = QtWidgets.QVBoxLayout(self.centralwidget)
+        self.verticalLayout.setObjectName("verticalLayout")
+        self.horizontalLayout_2 = QtWidgets.QHBoxLayout()
         self.horizontalLayout_2.setObjectName("horizontalLayout_2")
-        self.verticalLayout_6 = QtWidgets.QVBoxLayout()
-        self.verticalLayout_6.setObjectName("verticalLayout_6")
-        self.frame_2 = QtWidgets.QFrame(self.centralwidget)
-        self.frame_2.setStyleSheet("background-color: rgb(85, 255, 0);")
-        self.frame_2.setFrameShape(QtWidgets.QFrame.StyledPanel)
-        self.frame_2.setFrameShadow(QtWidgets.QFrame.Raised)
-        self.frame_2.setObjectName("frame_2")
-        self.verticalLayout_8 = QtWidgets.QVBoxLayout(self.frame_2)
-        self.verticalLayout_8.setObjectName("verticalLayout_8")
-        self.player1_label = QtWidgets.QLabel(self.frame_2)
+        self.frame = QtWidgets.QFrame(self.centralwidget)
+        self.frame.setStyleSheet("background-color: rgb(255, 255, 127);\n"
+"background-color: rgb(255, 255, 255);")
+        self.frame.setFrameShape(QtWidgets.QFrame.StyledPanel)
+        self.frame.setFrameShadow(QtWidgets.QFrame.Raised)
+        self.frame.setObjectName("frame")
+        self.horizontalLayout_3 = QtWidgets.QHBoxLayout(self.frame)
+        self.horizontalLayout_3.setContentsMargins(-1, -1, -1, 9)
+        self.horizontalLayout_3.setObjectName("horizontalLayout_3")
+        self.player1_label = QtWidgets.QLabel(self.frame)
         self.player1_label.setStyleSheet("font: 20pt \"MS Shell Dlg 2\";\n"
-"border: 3px solid red; \n"
-"\n"
-"")
-        self.player1_label.setAlignment(QtCore.Qt.AlignLeading|QtCore.Qt.AlignLeft|QtCore.Qt.AlignVCenter)
+"border: 3px solid black;")
         self.player1_label.setObjectName("player1_label")
-        self.verticalLayout_8.addWidget(self.player1_label)
-        self.label_11 = QtWidgets.QLabel(self.frame_2)
-        self.label_11.setEnabled(True)
-        self.label_11.setText("")
-        self.label_11.setAlignment(QtCore.Qt.AlignHCenter|QtCore.Qt.AlignTop)
-        self.label_11.setObjectName("label_11")
-        self.verticalLayout_8.addWidget(self.label_11)
-        self.verticalLayout_8.setStretch(0, 1)
-        self.verticalLayout_8.setStretch(1, 4)
-        self.verticalLayout_6.addWidget(self.frame_2)
-        self.horizontalLayout_2.addLayout(self.verticalLayout_6)
+        self.horizontalLayout_3.addWidget(self.player1_label)
+        self.player2_label = QtWidgets.QLabel(self.frame)
+        self.player2_label.setStyleSheet("font: 20pt \"MS Shell Dlg 2\";\n"
+"border: 3px solid black; ")
+        self.player2_label.setAlignment(QtCore.Qt.AlignLeading|QtCore.Qt.AlignLeft|QtCore.Qt.AlignVCenter)
+        self.player2_label.setObjectName("player2_label")
+        self.horizontalLayout_3.addWidget(self.player2_label)
+        self.horizontalLayout_2.addWidget(self.frame)
+        self.verticalLayout.addLayout(self.horizontalLayout_2)
         self.horizontalLayout = QtWidgets.QHBoxLayout()
         self.horizontalLayout.setSpacing(10)
         self.horizontalLayout.setObjectName("horizontalLayout")
@@ -70,7 +68,7 @@ class Ui_MainWindow(object):
         self.xy11 = QtWidgets.QLabel(self.centralwidget)
         self.xy11.setStyleSheet("background-color: rgb(65, 65, 65);\n"
 "font: 65pt \"MS Shell Dlg 2\";\n"
-"border: 3px solid red; \n"
+"border: 3px solid white; \n"
 "border-radius: 70px;\n"
 "color: rgb(170, 255, 255);")
         self.xy11.setText("")
@@ -80,7 +78,7 @@ class Ui_MainWindow(object):
         self.xy12 = QtWidgets.QLabel(self.centralwidget)
         self.xy12.setStyleSheet("background-color: rgb(65, 65, 65);\n"
 "font: 65pt \"MS Shell Dlg 2\";\n"
-"border: 3px solid red; \n"
+"border: 3px solid white; \n"
 "border-radius: 70px;\n"
 "color: rgb(170, 255, 255);")
         self.xy12.setText("")
@@ -90,7 +88,7 @@ class Ui_MainWindow(object):
         self.xy13 = QtWidgets.QLabel(self.centralwidget)
         self.xy13.setStyleSheet("background-color: rgb(65, 65, 65);\n"
 "font: 65pt \"MS Shell Dlg 2\";\n"
-"border: 3px solid red; \n"
+"border: 3px solid white; \n"
 "border-radius: 70px;\n"
 "color: rgb(170, 255, 255);")
         self.xy13.setText("")
@@ -103,7 +101,7 @@ class Ui_MainWindow(object):
         self.xy21 = QtWidgets.QLabel(self.centralwidget)
         self.xy21.setStyleSheet("background-color: rgb(65, 65, 65);\n"
 "font: 65pt \"MS Shell Dlg 2\";\n"
-"border: 3px solid red; \n"
+"border: 3px solid white; \n"
 "border-radius: 70px;\n"
 "color: rgb(170, 255, 255);")
         self.xy21.setText("")
@@ -113,7 +111,7 @@ class Ui_MainWindow(object):
         self.xy22 = QtWidgets.QLabel(self.centralwidget)
         self.xy22.setStyleSheet("background-color: rgb(65, 65, 65);\n"
 "font: 65pt \"MS Shell Dlg 2\";\n"
-"border: 3px solid red; \n"
+"border: 3px solid white; \n"
 "border-radius: 70px;\n"
 "color: rgb(170, 255, 255);")
         self.xy22.setText("")
@@ -123,7 +121,7 @@ class Ui_MainWindow(object):
         self.xy23 = QtWidgets.QLabel(self.centralwidget)
         self.xy23.setStyleSheet("background-color: rgb(65, 65, 65);\n"
 "font: 65pt \"MS Shell Dlg 2\";\n"
-"border: 3px solid red; \n"
+"border: 3px solid white; \n"
 "border-radius: 70px;\n"
 "color: rgb(170, 255, 255);")
         self.xy23.setText("")
@@ -138,7 +136,7 @@ class Ui_MainWindow(object):
         self.xy31 = QtWidgets.QLabel(self.centralwidget)
         self.xy31.setStyleSheet("background-color: rgb(65, 65, 65);\n"
 "font: 65pt \"MS Shell Dlg 2\";\n"
-"border: 3px solid red; \n"
+"border: 3px solid white; \n"
 "border-radius: 70px;\n"
 "color: rgb(170, 255, 255);")
         self.xy31.setText("")
@@ -148,7 +146,7 @@ class Ui_MainWindow(object):
         self.xy32 = QtWidgets.QLabel(self.centralwidget)
         self.xy32.setStyleSheet("background-color: rgb(65, 65, 65);\n"
 "font: 65pt \"MS Shell Dlg 2\";\n"
-"border: 3px solid red; \n"
+"border: 3px solid white; \n"
 "border-radius: 70px;\n"
 "color: rgb(170, 255, 255);")
         self.xy32.setText("")
@@ -158,7 +156,7 @@ class Ui_MainWindow(object):
         self.xy33 = QtWidgets.QLabel(self.centralwidget)
         self.xy33.setStyleSheet("background-color: rgb(65, 65, 65);\n"
 "font: 65pt \"MS Shell Dlg 2\";\n"
-"border: 3px solid red; \n"
+"border: 3px solid white; \n"
 "border-radius: 70px;\n"
 "color: rgb(170, 255, 255);")
         self.xy33.setText("")
@@ -167,38 +165,12 @@ class Ui_MainWindow(object):
         self.horizontalLayout_4.addWidget(self.xy33)
         self.verticalLayout_2.addLayout(self.horizontalLayout_4)
         self.horizontalLayout.addLayout(self.verticalLayout_2)
-        self.horizontalLayout_2.addLayout(self.horizontalLayout)
-        self.verticalLayout_7 = QtWidgets.QVBoxLayout()
-        self.verticalLayout_7.setObjectName("verticalLayout_7")
-        self.frame = QtWidgets.QFrame(self.centralwidget)
-        self.frame.setStyleSheet("background-color: rgb(255, 255, 127);")
-        self.frame.setFrameShape(QtWidgets.QFrame.StyledPanel)
-        self.frame.setFrameShadow(QtWidgets.QFrame.Raised)
-        self.frame.setObjectName("frame")
-        self.verticalLayout_9 = QtWidgets.QVBoxLayout(self.frame)
-        self.verticalLayout_9.setContentsMargins(-1, -1, -1, 9)
-        self.verticalLayout_9.setObjectName("verticalLayout_9")
-        self.player2_label = QtWidgets.QLabel(self.frame)
-        self.player2_label.setStyleSheet("font: 20pt \"MS Shell Dlg 2\";\n"
-"border: 3px solid red; ")
-        self.player2_label.setAlignment(QtCore.Qt.AlignLeading|QtCore.Qt.AlignLeft|QtCore.Qt.AlignVCenter)
-        self.player2_label.setObjectName("player2_label")
-        self.verticalLayout_9.addWidget(self.player2_label)
-        self.label_10 = QtWidgets.QLabel(self.frame)
-        self.label_10.setText("")
-        self.label_10.setAlignment(QtCore.Qt.AlignHCenter|QtCore.Qt.AlignTop)
-        self.label_10.setObjectName("label_10")
-        self.verticalLayout_9.addWidget(self.label_10)
-        self.verticalLayout_9.setStretch(0, 1)
-        self.verticalLayout_9.setStretch(1, 4)
-        self.verticalLayout_7.addWidget(self.frame)
-        self.horizontalLayout_2.addLayout(self.verticalLayout_7)
-        self.horizontalLayout_2.setStretch(0, 1)
-        self.horizontalLayout_2.setStretch(1, 2)
-        self.horizontalLayout_2.setStretch(2, 1)
+        self.verticalLayout.addLayout(self.horizontalLayout)
+        self.verticalLayout.setStretch(0, 2)
+        self.verticalLayout.setStretch(1, 9)
         MainWindow.setCentralWidget(self.centralwidget)
         self.menubar = QtWidgets.QMenuBar(MainWindow)
-        self.menubar.setGeometry(QtCore.QRect(0, 0, 1150, 21))
+        self.menubar.setGeometry(QtCore.QRect(0, 0, 608, 21))
         self.menubar.setObjectName("menubar")
         MainWindow.setMenuBar(self.menubar)
         self.statusbar = QtWidgets.QStatusBar(MainWindow)
@@ -211,5 +183,5 @@ class Ui_MainWindow(object):
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
         MainWindow.setWindowTitle(_translate("MainWindow", "Tic Tac Toe"))
-        self.player1_label.setText(_translate("MainWindow", "Player 1"))
-        self.player2_label.setText(_translate("MainWindow", "Player 2"))
+        self.player1_label.setText(_translate("MainWindow", "You: 0"))
+        self.player2_label.setText(_translate("MainWindow", "Computer: 0"))

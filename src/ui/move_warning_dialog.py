@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-# Form implementation generated from reading ui file '.\game_result_dialog.ui'
+# Form implementation generated from reading ui file '.\move_warning_dialog.ui'
 #
 # Created by: PyQt5 UI code generator 5.15.1
 #
@@ -31,27 +31,17 @@ class Ui_Dialog(object):
         self.verticalLayout_2.addLayout(self.verticalLayout)
         self.horizontalLayout_2 = QtWidgets.QHBoxLayout()
         self.horizontalLayout_2.setObjectName("horizontalLayout_2")
-        self.new_game_button = QtWidgets.QPushButton(Dialog)
+        self.ok_button = QtWidgets.QPushButton(Dialog)
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Preferred)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
-        sizePolicy.setHeightForWidth(self.new_game_button.sizePolicy().hasHeightForWidth())
-        self.new_game_button.setSizePolicy(sizePolicy)
-        self.new_game_button.setStyleSheet("background-color: rgb(255, 210, 156);\n"
+        sizePolicy.setHeightForWidth(self.ok_button.sizePolicy().hasHeightForWidth())
+        self.ok_button.setSizePolicy(sizePolicy)
+        self.ok_button.setStyleSheet("background-color: rgb(255, 210, 156);\n"
 "font: 11pt \"MS Shell Dlg 2\";\n"
 "")
-        self.new_game_button.setObjectName("new_game_button")
-        self.horizontalLayout_2.addWidget(self.new_game_button)
-        self.exit_button = QtWidgets.QPushButton(Dialog)
-        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Preferred)
-        sizePolicy.setHorizontalStretch(0)
-        sizePolicy.setVerticalStretch(0)
-        sizePolicy.setHeightForWidth(self.exit_button.sizePolicy().hasHeightForWidth())
-        self.exit_button.setSizePolicy(sizePolicy)
-        self.exit_button.setStyleSheet("background-color: rgb(255, 210, 156);\n"
-"font: 11pt \"MS Shell Dlg 2\";")
-        self.exit_button.setObjectName("exit_button")
-        self.horizontalLayout_2.addWidget(self.exit_button)
+        self.ok_button.setObjectName("ok_button")
+        self.horizontalLayout_2.addWidget(self.ok_button)
         self.verticalLayout_2.addLayout(self.horizontalLayout_2)
         self.verticalLayout_2.setStretch(0, 6)
         self.verticalLayout_2.setStretch(1, 1)
@@ -61,7 +51,7 @@ class Ui_Dialog(object):
 
     def retranslateUi(self, Dialog):
         _translate = QtCore.QCoreApplication.translate
-        Dialog.setWindowTitle(_translate("Dialog", "Game Over"))
-        self.result_label.setText(_translate("Dialog", "Computer won!"))
-        self.new_game_button.setText(_translate("Dialog", "New Game"))
-        self.exit_button.setText(_translate("Dialog", "Quit"))
+        Dialog.setWindowTitle(_translate("Dialog", "WARNING!"))
+        self.result_label.setText(_translate("Dialog", "There aren\'t such a move.\n"
+"Please try another move."))
+        self.ok_button.setText(_translate("Dialog", "OK"))

@@ -14,7 +14,7 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>Game Over</string>
+   <string>WARNING!</string>
   </property>
   <property name="styleSheet">
    <string notr="true">background-color: rgb(0, 0, 80);</string>
@@ -32,7 +32,8 @@
 font: 22pt &quot;MS Shell Dlg 2&quot;;</string>
        </property>
        <property name="text">
-        <string>Computer won!</string>
+        <string>There aren't such a move.
+Please try another move.</string>
        </property>
        <property name="alignment">
         <set>Qt::AlignCenter</set>
@@ -44,7 +45,7 @@ font: 22pt &quot;MS Shell Dlg 2&quot;;</string>
    <item>
     <layout class="QHBoxLayout" name="horizontalLayout_2">
      <item>
-      <widget class="QPushButton" name="new_game_button">
+      <widget class="QPushButton" name="ok_button">
        <property name="sizePolicy">
         <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
          <horstretch>0</horstretch>
@@ -57,24 +58,7 @@ font: 11pt &quot;MS Shell Dlg 2&quot;;
 </string>
        </property>
        <property name="text">
-        <string>New Game</string>
-       </property>
-      </widget>
-     </item>
-     <item>
-      <widget class="QPushButton" name="exit_button">
-       <property name="sizePolicy">
-        <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
-         <horstretch>0</horstretch>
-         <verstretch>0</verstretch>
-        </sizepolicy>
-       </property>
-       <property name="styleSheet">
-        <string notr="true">background-color: rgb(255, 210, 156);
-font: 11pt &quot;MS Shell Dlg 2&quot;;</string>
-       </property>
-       <property name="text">
-        <string>Quit</string>
+        <string>OK</string>
        </property>
       </widget>
      </item>
