@@ -2,7 +2,7 @@ from PyQt5.QtGui import QIcon
 from PyQt5.QtWidgets import QApplication, QWidget, \
                             QMainWindow, QDialog
 from PyQt5.QtCore import Qt
-
+import sys
 from math import inf
 
 # binding
@@ -14,7 +14,6 @@ import tic_tac_toe_ai as ai
 class MainWindow(QMainWindow):
     def __init__(self):
         super().__init__()
-        
         self.player = 'X'
         self.computer = 'O'
         self.move_count = 9
@@ -53,11 +52,12 @@ class MainWindow(QMainWindow):
         self.warning_dialog = QDialog()
         self.warning_ui = move_warning_dialog.Ui_Dialog()
         self.warning_ui.setupUi(self.warning_dialog)
-        self.warning_ui.ok_button.clicked.connect(self.warning_dialog.close)
+        self.warning_ui.ok_button.clicked.connect(lambda e: (self.warning_dialog.close(), self.setEnabled(True)))
 
     def map_func(self, i, j):
         def wrapper(event):
             if(self.board[i][j] != '_'):
+                self.setEnabled(False)
                 self.warning_dialog.show()
                 self.warning_dialog.exec_()
                 return
@@ -93,13 +93,12 @@ class MainWindow(QMainWindow):
         return wrapper
 
     def create_result_notification(self, message):
+        self.setEnabled(False)
         self.notification.result_label.setText(message)
         self.result_dialog.show()
         self.result_dialog.exec_()
 
     def create_new_game(self):
-        self.player = 'X'
-        self.computer = 'O'
         self.move_count = 9
         self.board = [
                        ['_', '_', '_'],
@@ -110,13 +109,14 @@ class MainWindow(QMainWindow):
             for j in range(3):
                 self.game_places[i][j].setText("")
         self.result_dialog.close()
+        self.setEnabled(True)
 
     def exit_game(self):
         self.result_dialog.close()
         self.close()
     
-    
         
+
 if __name__ == "__main__":
     app = QApplication(sys.argv)
     splashScreen = MainWindow()
