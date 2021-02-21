@@ -1,13 +1,13 @@
 from math import inf
 
 class player:
-  you = 'X'
-  computer = 'O'
+    you = 'X'
+    computer = 'O'
   
 class move:
-  x = -1
-  y = -1
-  val = -inf
+    x = -1
+    y = -1
+    val = -inf
   
 def control(board):
     # horizontal control
@@ -97,7 +97,7 @@ def minimax(board, p, depth, alpha, beta):
 
 board = [['_', '_', '_'],
          ['_', '_', '_'],
-         ['_', '_', '_']]   
+         ['_', '_', '_']]
 
 
 def test(board, n, m):
@@ -105,22 +105,40 @@ def test(board, n, m):
         for j in range(3):
             if(board[i][j] != '_'):
                 continue
-      
+
+            # USER MOVE SECTION
             board[i][j] = 'X'
             m.append((i, j))
-            if(n > 1):
-                ai_move = minimax(board, player.computer, n - 1, -inf, inf)
-                board[ai_move.x][ai_move.y] = 'O'
-                m.append((ai_move.x, ai_move.y))
-            if(control(board) == -1):
+    
+            if(control(board) == -1): # if player won
                 for k in board:
                     print(k)
                 print(m)
                 print("Computer lost.")
                 print("Mission failed.")
                 exit()
-            test(board, n - 2, m)
-            board[i][j] = '_'
+
+            # COMPUTER MOVE SECTION
+            if(n > 1): # if computer has a move
+                ai_move = minimax(board, player.computer, n - 1, -inf, inf)
+                board[ai_move.x][ai_move.y] = 'O'
+                m.append((ai_move.x, ai_move.y))
+
+                if(control(board) == 1): #game over
+                    # undo previous moves to continue new combinations
+                    print(m)
+                    board[ai_move.x][ai_move.y] = '_' 
+                    board[i][j] = '_'
+                    m.pop()
+                    m.pop()
+                    continue
+                  
+                test(board, n - 2, m) 
+                board[ai_move.x][ai_move.y] = '_' # if computer played, undo this move
+                m.pop()
+                
+            board[i][j] = '_' #undo player's move
+            m.pop()
 
 
 if __name__ == '__main__':
